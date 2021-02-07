@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./script.js" type="text/javascript"></script>
+    <!DOCTYPE html>
+    <html lang="pl">
+    
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    
+    
+    <body>
+    
+        <div id="wrapper">
+            <form class="myForm" id="myForm" onsubmit="onSubmit();return false">
+                <label for="elementTypeLabel">Element type</label>
+                <input type="elementType" name="elementType" id="elementType" required>
+                
+                <label for="contentLabel">Content</label>
+                <input type="content" name="content" id="content" required>
+    
+                <label for="colorLabel">Chose a text color:</label>
+                <select id="color" name="color">
+                    <option value="black">black</option>
+                  <option value="blue">blue</option>
+                  <option value="red">red</option>
+                  <option value="green">green</option>
+                  <option value="white">white</option>
+                </select>
+    
+                <label for="backgroundColorLabel">Chose a background color:</label>
+                <select id="backgroundColor" name="backgroundColor">
+                    <option value="white">white</option>
+                    <option value="blue">blue</option>
+                    <option value="red">red</option>
+                    <option value="green">green</option>
+                    <option value="black">black</option>
+                </select>
+    
+                <label name="howManyLabel" id="howManyLabel">How many? </label>
+                <input type="howMany" name="howMany" id="howMany" required>
+                
+                <button type="submit">Submit</button>
+            </form>
+    
+            <div id = createArea>
+    
+            </div>
+            
+        </div>
+    
+        <script src="./script.js" type="text/javascript"></script>
+    </body>
+    
+    </html>
+    <p>List One</p>
+    <ul id="listOne">
+        <li>Pierwszy</li>
+        <li>Drugi</li>
+        <li>Trzeci</li>
+        <li>Czwarty</li>
+        <li>Piąty</li>
+        <li>Szósty</li>
+    </ul>
+
+    <button onclick="moveToSecondList()" id="buttonOne">Move to second list</button>
+
+    <p>List Two</p>
+    <ul id="listTwo">
+    </ul>
+
+    <button onclick="moveToFirstList()" id="buttonTwo">Move to first list</button>
+
+</body>
+
+</html>

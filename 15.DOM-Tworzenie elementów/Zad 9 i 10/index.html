@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <div id="wrapper">
+        <form class="myForm" id="myForm" onsubmit="onSubmit();return false">
+            <label for="customer_name">Name</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="surname">Surname </label>
+            <input type="text" name="surname" id="surname" required>
+
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" required>
+
+            <label name="children" id="children">Children </label>
+            <input type="number" name="children" id="children" required>
+
+            <button type="submit">Submit</button>
+            <button onclick="createTable()"  onclick="toggle_visibility('table')">CreateTable</button>
+        </form>
+        
+        <table id="table" style="display:none">
+
+        <!-- powinno zmieniać on click create table na show z none, nie robi więc dałem powyżej show -->
+
+            <tr id = header>
+                <td id="nameHeader" style="font-weight: bold;">Name</td>
+                <td id="surnameHeader" style="font-weight: bold;">Surname</td>
+                <td id="ageHeader" style="font-weight: bold;">Age</td>
+                <td id="childrenHeader" style="font-weight: bold;">Children</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="./script.js" type="text/javascript"></script>
+</body>
+
+</html>

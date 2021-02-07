@@ -83,5 +83,68 @@ function addClass(param) {
 
 var randomNum = Math.floor(Math.random() * 11);
 addClass(randomNum)
+///////////////////////////////////
+// Zadanie 8
 
-// zmiana
+function makeObject(string)
+{
+    let obj = {
+        newClass: string
+    };
+
+    return obj;
+}
+
+function readAndAssign(obj)
+{
+    let div = document.getElementById("myDiv");
+    let newClass = obj.newClass;
+    div.classList.add(newClass);
+}
+
+let myObj = makeObject("string_z_parametru");
+readAndAssign(myObj);
+
+// Zadanie 9
+
+const div = document.getElementById('numbers');
+
+const addClass = () => {
+  let params = Math.floor(Math.random() * 10);
+
+  if(params % 2 == 0) div.className = "even";
+    else div.className = "odd";
+};
+
+addClass();
+
+Zadanie 10
+
+
+function toArray(items) {
+
+    tab = [];
+  for (var i = 0; i < items.length; i++) {
+    tab.push(items[i].innerHTML);
+  }
+
+  return tab;
+}
+
+console.log(toArray(document.querySelectorAll("#longList li")))
+
+
+// Zadanie 11
+
+var items = document.querySelector("#longList")
+
+var children = items.children;
+
+function rndVal(children) {
+    for (var i = 0; i < children.length; i++){
+        children[i].dataset.value = children[i].innerHTML;
+        children[i].innerHTML = Math.floor(Math.random() * (10));
+    }
+}
+
+rndVal(children);

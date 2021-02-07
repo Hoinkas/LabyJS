@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" tekst="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <div id="wrapper">
+        <form class="myForm" id="myForm" onsubmit="onSubmit();return false">
+            <label for="elementTypeLabel">Typ elementu</label>
+            <input type="elementType" name="elementType" id="elementType" required>
+            
+            <label for="tekstLabel">Tekst</label>
+            <input type="tekst" name="tekst" id="tekst" required>
+
+            <label for="colorLabel">Kolor tekstu:</label>
+            <select id="color" name="color">>
+              <option value="blue">Niebieski</option>
+              <option value="red">Czerwony</option>
+              <option value="green">Zielony</option>
+            </select>
+
+            <label for="kolorTlaLabel">Kolor tła:</label>
+            <select id="kolorTla" name="kolorTla">
+                <option value="blue">Niebieski</option>
+                <option value="red">Czerwony</option>
+                <option value="green">Zielony</option>
+            </select>
+
+            <label name="amountLabel" id="amountLabel">Ile razy:</label>
+            <input type="amount" name="amount" id="amount" required>
+            
+            <button type="submit">Utwórz</button>
+        </form>
+
+        <div id = createObject>
+
+        </div>
+        
+    </div>
+
+    <script src="./script.js" type="text/javascript"></script>
+</body>
+
+</html>
