@@ -5,40 +5,56 @@ var listOne = document.querySelector("#listOne");
 var listTwo = document.querySelector("#listTwo");
 
 var childOne = listOne.children;
-var childTwo = listOne.children;
-
-console.log(childOne);
-console.log(childTwo);
+var childTwo = listTwo.children;
 
 var lenOne = childOne.length;
-var lenTwo = childOne.length;
+var lenTwo = childTwo.length;
 
 var swith;
 
 function moveToSecondList() {
-    if (lenOne > 0) {
+
+  console.log(lenOne)
+
+  if (lenOne > 0) {
+
         swith = listOne.lastElementChild;
+
         listTwo.appendChild(swith);
-        listOne.lastElementChild.removeChild;
+        swith.removeChild;
 
         buttonTwo.disabled = false;
-    }
+        buttonOne.disabled = false;
 
-    else if (lenOne == null) {
-      buttonTwo.disabled = true;
-    }
+        if (lenOne == 1) {
+          buttonOne.disabled = true;
+        }
+
+        lenOne--
+        lenTwo++
+  }
 }
 
 function moveToFirstList() {
-    if (lenTwo > 0) {
+
+  if (lenTwo == 1) {
+    buttonTwo.disabled = true;
+  }
+
+  if (lenTwo > 0) {
         swith = listTwo.lastElementChild;
+
         listOne.appendChild(swith);
-        listTwo.lastElementChild.removeChild;
+        swith.removeChild;
 
-        buttonOne.disabled = false;
-    }
+        buttonTwo.disabled = false;
+        buttonOne.disabled = false
 
-    else if (lenTwo == null) {
-      buttonOne.disabled = true;
+        if (lenTwo == 1) {
+          buttonTwo.disabled = true;
+        }
+
+        lenTwo--
+        lenOne++
     }
   }
