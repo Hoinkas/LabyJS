@@ -1,38 +1,45 @@
-//Zad 7
-let buttonOne = document.querySelector("#buttonOne");
-let buttonTwo = document.querySelector("#buttonTwo");
+buttonOne = document.querySelector("#buttonOne");
+buttonTwo = document.querySelector("#buttonTwo");
 
-let listOne = document.querySelector("#listOne");
-let listTwo = document.querySelector("#listTwo");
+var listOne = document.querySelector("#listOne");
+var listTwo = document.querySelector("#listTwo");
 
-let chLiOne = listOne.children;
-let chLiTwo = listTwo.children;
+var childOne = listOne.children;
+var childTwo = listOne.children;
 
-let switchObject
+console.log(childOne);
+console.log(childTwo);
 
-let lenghtLiOne = chLiOne.length;
-let lenghtLiTwo = chLiTwo.length;
+var lenOne = childOne.length;
+var lenTwo = childOne.length;
 
-function moveToFirstList() {
-  if (lenghtLiOne > 0) {
-    switchObject = listOne.lastElementChild;
-    listTwo.appendChild(switchObject);
-    listOne.lastElementChild.removeChild;
-  }
-  else if (lenghtLiOne == 0){
-    buttonOne.disabled = true;
-  }
-  else buttonOne.disabled = false;
-}
+var swith;
 
 function moveToSecondList() {
-  if (lenghtLiTwo > 0) {
-    switchObject = listTwo.lastElementChild;
-    listOne.appendChild(switchObject);
-    listTwo.lastElementChild.removeChild;
+    if (lenOne > 0) {
+        swith = listOne.lastElementChild;
+        listTwo.appendChild(swith);
+        listOne.lastElementChild.removeChild;
+
+        buttonTwo.disabled = false;
+    }
+
+    else if (lenOne == null) {
+      buttonTwo.disabled = true;
+          
+}
+
+function moveToFirstList() {
+    if (lenTwo > 0) {
+        swith = listTwo.lastElementChild;
+        listOne.appendChild(swith);
+        listTwo.lastElementChild.removeChild;
+
+        buttonOne.disabled = false;
+    }
+
+    else if (lenTwo == null) {
+      buttonOne.disabled = true;
+    }
   }
-  else if (lenghtLiTwo == 0){
-    buttonTwo.disabled = true;
-  }
-  else buttonTwo.disabled = false;
 }
