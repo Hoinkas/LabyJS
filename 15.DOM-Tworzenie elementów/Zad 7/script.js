@@ -26,7 +26,7 @@ function moveToSecondList() {
 
     else if (lenOne == null) {
       buttonTwo.disabled = true;
-          
+    }
 }
 
 function moveToFirstList() {
@@ -42,4 +42,3 @@ function moveToFirstList() {
       buttonOne.disabled = true;
     }
   }
-}
