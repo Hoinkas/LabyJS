@@ -1,16 +1,15 @@
-let nameN = "";
+//Zad 9
+
+let firstName = "";
 let surname = "";
 let age = "";
 let children = "";
 
-let nameNCapitalized
-let surnameCapitalized
-
 class Person {
-  constructor(number, fname, lname, age, children) {
-    this.number = number;
-    this.firstName = fname;
-    this.lastName = lname;
+  constructor(amount, firstName, surname, age, children) {
+    this.amount = amount;
+    this.firstName = firstName;
+    this.surname = surname;
     this.age = age;
     this.children = children;
   }
@@ -18,50 +17,47 @@ class Person {
 
 document.getElementById("table").style.display == 'none';
 
-let counter = 0;
-
 data = [];
+let count = 0;
 
 function onSubmit(event) {
   let form = document.forms["myForm"];
 
   console.log(arguments);
   let formData = new FormData(form);
-  // document.myForm.reset();
-  // aby wyczyścić zawartosc labali formularza
-  // czemu się przeładowuje? TODO
+  document.myForm.reset();
 
-  counter++;
-  let number = counter;
-  nameN = formData.get("name");
+  count++;
+  let amount = count;
+  firstName = formData.get("firstName");
   surname = formData.get("surname");
   age = formData.get("age");
   children = formData.get("children");
 
 
+  upperFirstLetter(firstName, surname)
 
-  capitalizeFirstLetter(nameN, surname)
-
-  const person = new Person(number, nameNCapitalized, surnameCapitalized, age, children);
+  const person = new Person(amount, firstNameUpper, surnameUpper, age, children);
   data.push(person);
 
+  createElement();
 }
 
-function createTable() {
-
-  let table = document.querySelector("#table").style.display = "table"
-
-  for(let person of data){
-    let table = document.querySelector("#table");
-    const tr = document.createElement("tr");
-    tr.innerHTML = `<td>${person.firstName}</td><td>${person.lastName}</td><td>${person.age}</td><td>${person.children}</td>`;
-    table.appendChild(tr);
+function createElement() {
+  let createArea = document.querySelector("#addObjects");
+  for (i = 1; i <= amount; i++) {
+      const element = document.createElement(`div`);
+      element.innerHTML = `<td>${person.firstName}</td><td>${person.surname}</td><td>${person.age}</td><td>${person.children}</td>`;
+    createArea.appendChild(element);
   }
 }
 
-// Zadanie 10
+// Zad 10
 
-function capitalizeFirstLetter(nameN, surname) {
-  nameNCapitalized = nameN.charAt(0).toUpperCase() + nameN.slice(1);
-  surnameCapitalized = surname.charAt(0).toUpperCase() + surname.slice(1);
+let firstNameUpper
+let surnameUpper
+
+function upperFirstLetter(firstName, surname) {
+  firstNameUpper = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+  surnameUpper = surname.charAt(0).toUpperCase() + surname.slice(1);
 }

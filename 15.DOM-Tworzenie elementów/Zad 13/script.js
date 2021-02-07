@@ -1,41 +1,49 @@
-string1 = "Kabanos is the best band ever";
-string2 = "Woodstock is life";
-string3 = "Folder 14 and 15 supposed to take a night, took 3";
-string4 = "This task set blew my mind.";
-string5 =
-  "Music Legend of Zelda • FULL Relaxing Music, plays in the background. Masterpiece";
+tab = ["aaa1", "bbb", "ccc2", "ddd", "eee3"];
 
-arr = [string1, string2, string3, string4, string5];
+chars = [];
 
-charsNum = [];
-
-for (i = 0; i <= arr.length - 1; i++) {
+for (i = 0; i <= tab.length - 1; i++) {
   let num = 0;
-  let localString = arr[i];
-  let len = localString.length;
+  let text = tab[i];
+  let len = text.length;
+
   for (let j = 0; j <= len; j++) {
-    if (isCharacterALetter(localString.charAt(j))) {
+    if (isCharString(text.charAt(j))) {
       num++;
     }
   }
-  charsNum.push(num);
+  chars.push(num);
 }
 
-function isCharacterALetter(char) {
+function isCharString(char) {
     return /[a-zA-Z]/.test(char);
 }
 
+let words = [];
+let numbers = [];
+
+function checkIfString() {
+  tab.forEach(str => {
+    let words = str.split(" ");
+
+    words.forEach((e) => {
+
+    let i = parseInt(e, 10);
+
+    if (!isNaN(i)) {
+      numbers.push(i);
+      }
+    })
+  })
+}
+  
 let sum = 0;
-for (let i = 0; i < charsNum.length; i++) {
-  sum += charsNum[i];
-}
+chars.forEach(char => {
+  sum += char;
+});
 
-let avg = 0;
-for (let i = 0; i < charsNum.length; i++) {
-    avg = sum/i;
-}
+let sr = sum/chars.length;
 
-
-console.log("num of letters in strings = " + charsNum);
-console.log("sum of letters in strings = " + sum);
-console.log("avg num of letter in strings = " + avg);
+console.log("Ilość liter = " + chars);
+console.log("Suma liczb = " + sum);
+console.log("Średnia liczb = " + sr);

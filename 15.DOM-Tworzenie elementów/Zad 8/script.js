@@ -1,35 +1,36 @@
 let type;
 let tekst;
-let kolor;
-let kolorTla;
+let color;
+let backgroundColor;
 let amount;
 
 function onSubmit(event) {
-  let formularz = document.formularzs["formularz"];
+  let forms = document.forms["myForms"];
 
-  let formularzData = new FromFata(formularz);
+  let formsData = new FormData(forms);
 
-  type = formularzData.get("elementType");
-  tekst = formularzData.get("tekst");
-  kolor = formularzData.get("kolor");
-  kolorTla = formularzData.get("kolorTla");
-  amount = formularzData.get("amount");
+  type = formsData.get("type");
+  tekst = formsData.get("tekst");
+  color = formsData.get("color");
+  backgroundColor = formsData.get("backgroundColor");
+  amount = formsData.get("amount");
+
 
   console.log(type);
   console.log(tekst);
-  console.log(kolor);
-  console.log(kolorTla);
+  console.log(color);
+  console.log(backgroundColor);
   console.log(amount);
   
   createElement();
 }
 
 function createElement() {
-  let createObject = document.querySelector("#createObject");
+  let createArea = document.querySelector("#addObjects");
   for (i = 1; i <= amount; i++) {
       const element = document.createElement(`div`);
-      element.innerHTML = `<${type} style = "kolor:${kolor};background-kolor: ${kolorTla};">${tekst}</${type}>`;
+      element.innerHTML = `<${type} style = "color:${color};background-color: ${backgroundColor};">${tekst}</${type}>`;
       console.log(i);
-    createObject.appendChild(element);
+    createArea.appendChild(element);
   }
 }

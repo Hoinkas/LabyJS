@@ -1,11 +1,11 @@
 //Zad 5
 
-function ceateRandomDiv() {
+createRandomDiv = () => {
 
-  var generator = document.createDocumentFragment();
-  var count = Math.floor(Math.random() * 25); 
+  let generator = document.createDocumentFragment();
+  let count = Math.random() * 25; 
 
-  for (var i = 1; i < count; i++) {
+  for (let i = 1; i < count; i++) {
 
     let divElement = document.createElement("div");
 

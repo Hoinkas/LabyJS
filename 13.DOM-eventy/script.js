@@ -1,4 +1,4 @@
-// Zadanie 1
+//Zad 1
 
 let btn = document.querySelector('#test-event');
 btn.addEventListener('click', function(event){
@@ -26,7 +26,7 @@ document.querySelector('#input-test').addEventListener("change", function (event
 });
 
 
-// Zadanie 2
+//Zad 2
 
 function show() {
     const btnEx2 = document.getElementById("ex2")
@@ -39,7 +39,7 @@ function show() {
 
 show()
 
-// Zadanie 3
+//Zad 3
 
 function changeColor() {
     const btnEx3 = document.getElementById("ex3")
@@ -55,42 +55,42 @@ function changeColor() {
 
 changeColor();
 
-// Zadanie 4
+//Zad 4
 
 const inputError = document.getElementById('ex3-err');
 const input = document.getElementById('input-test');
 
 input.addEventListener('keyup', (e) => {
     const reg = /[0-9]/gm;
-    const checkIfNumber = e.target.value.match(reg);
-    if (checkIfNumber !== null) {
-        inputError.innerText = 'You cannot enter numbers here';
+    const cehckNum = e.target.value.match(reg);
+    if (cehckNum !== null) {
+        inputError.innerText = 'You cannot enter here';
     }else {
         inputError.innerText = '';
     }
 });
 
 
-// Zadanie 5
+//Zad 5
 
 const btnEx5 = document.getElementById('ex5-btn');
 const counter = document.getElementById('ex5');
-let clickNumber = 0;
+let cn = 0;
 
 btnEx5.addEventListener('click', function counting() {
-    clickNumber++;
-    if(clickNumber == 10) {
+    cn++;
+    if(cn == 10) {
         btnEx5.removeEventListener('click', counting)
     }
     else {
-        counter.innerHTML = clickNumber;
+        counter.innerHTML = cn;
     }
 })
 
 
-// Zadanie 6
+//Zad 6
 
-function changeBack() {
+function reset() {
     document.addEventListener('scroll', (event)=> {
         let scrollState = window.scrollY;
         let body = document.querySelector('body');
@@ -102,57 +102,57 @@ function changeBack() {
         }
     })
 }
-changeBack();
+reset();
 
-//Zadanie 7
+//Zad 7
 
 var input = document.querySelector('div#calculator > input');
 var buttons = document.querySelectorAll('div#calculator button');
-var number = 0;
-var number2 = 0;
+var num = 0;
+var num2 = 0;
 
-function numPress() {
+function downCalc() {
     
     for(let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function() {
             if(this.innerText === '+'){
-                input.value = number + number2;
-                number = 0;
-                number2 = 0;                
-                input.value = number + number2;
-                number = 0;
-                number2 = 0;
+                input.value = num + num2;
+                num = 0;
+                num2 = 0;                
+                input.value = num + num2;
+                num = 0;
+                num2 = 0;
             }
             else if(this.innerText === '-'){
-                input.value = number - number2;
-                number = 0;
-                number2 = 0;
+                input.value = num - num2;
+                num = 0;
+                num2 = 0;
 
             }
             else if(this.innerText === '*'){
-                input.value = number * number2;
-                number = 0;
-                number2 = 0;
+                input.value = num * num2;
+                num = 0;
+                num2 = 0;
             }
-            else if(this.innerText === '/'){
-                if (number2 === 0){
-                    input.value =("cholero nie dziel przez 0!");
-                }else 
-                input.value = number / number2;
-                number = 0;
-                number2 = 0;
+            else if(this.innerText === '/') {
+                if (num2 === 0){
+                    input.value = "incorrect operation";
+                } else 
+                input.value = num / num2;
+                num = 0;
+                num2 = 0;
             }else {
-                console.log(number);
-                console.log(number2);
-                if(number === 0){
+                console.log(num);
+                console.log(num2);
+                if(num === 0){
                     input.value = '';
-                    number = Number(this.innerText)
+                    num = num(this.innerText)
                 } else {
-                    number2 = Number(this.innerText);
+                    num2 = num(this.innerText);
                 }
             }
         })
     }
 }
 
-numPress();
+downCalc();

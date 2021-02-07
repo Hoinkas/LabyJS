@@ -2,32 +2,30 @@
 <html lang="pl">
 
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <meta name="viewport" tekst="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 
 <body>
 
     <div id="wrapper">
-        <form class="myForm" id="myForm" onsubmit="onSubmit();return false">
-            <label for="elementTypeLabel">Typ elementu</label>
-            <input type="elementType" name="elementType" id="elementType" required>
+        <form class="myForms" id="myForms" onsubmit="onSubmit();return false">
+            <label for="typeLabel">Typ</label>
+            <input type="type" name="type" id="type" required>
             
-            <label for="tekstLabel">Tekst</label>
+            <label for="tekstLabel">tekst</label>
             <input type="tekst" name="tekst" id="tekst" required>
 
             <label for="colorLabel">Kolor tekstu:</label>
-            <select id="color" name="color">>
+            <select id="color" name="color">
               <option value="blue">Niebieski</option>
               <option value="red">Czerwony</option>
               <option value="green">Zielony</option>
             </select>
 
-            <label for="kolorTlaLabel">Kolor tła:</label>
-            <select id="kolorTla" name="kolorTla">
+            <label for="backgroundColorLabel">Kolor tła:</label>
+            <select id="backgroundColor" name="backgroundColor">
                 <option value="blue">Niebieski</option>
                 <option value="red">Czerwony</option>
                 <option value="green">Zielony</option>
@@ -39,7 +37,7 @@
             <button type="submit">Utwórz</button>
         </form>
 
-        <div id = createObject>
+        <div id = addObjects>
 
         </div>
         

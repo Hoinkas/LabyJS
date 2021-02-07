@@ -1,38 +1,34 @@
-let string ="- Ala ma kota. Parafraza: Ala jest posiadaczką kota.- Ala ma kota. Pastisz. Ola ma psa.- Ala ma kota. Parodia: Kot ma Alę.- Ala ma kota. Trawestacja (poważnie): Upiorna z wyglądu i demoniczna z zachowania Alicja była w posiadaniu nie mniej przerażającego i groźnego dla mysz zwierzęcia - kota.- Ala ma kota. Trawestacja (z humorem): Wesoła trzpiotka Ala miała pod swoją opieką nienormalnego, bo zakochanego w psach kota.";
-// let string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+let string ="Lorem Ipsum Ala";
+let search;
 
-let found;
-
-let obj = {
-  story: string,
-  get alaOla() {
+let object = {
+  tekst: string,
+  get aleksandra() {
     let words = string.split(" ");
-    found = words.includes('Ala');
+    search = words.includes('Ala');
     console.log(found)
 
     for (let i = 0; i < words.length; i++) {
         words[i] = words[i].replace("Ala","Ola")
     }
-    newString = words.join(" ");
+    info = words.join(" ");
 
-    if(found == false){
-        newString = "Słowo Ala nie występuje w tekście."
+    if(search == false){
+        info = "Słowo Ala nie występuje w tekście."
     }
 
-    return newString;
+    return info;
   },
 };
 
-function createDiv() {
-  prtString = obj.alaOla;
+function addObject() {
+  printTekst = object.aleksandra;
 
   var gen = document.createDocumentFragment();
   let divElement = document.createElement("div");
-
-  let divElementText = document.createTextNode(prtString);
+  let divElementText = document.createTextNode(printTekst);
 
   divElement.appendChild(divElementText);
-
   document.body.appendChild(divElement);
 }
 
