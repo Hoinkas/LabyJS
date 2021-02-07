@@ -21,14 +21,12 @@ function checkIfString() {
   console.log(sum);
   
   let divs = 1;
-  let n = 0;
   
   numbers.forEach(num => {
     divs *= num;
-    i++
   });
 
-  for (var i = 1; i < divs; i++) {
+  for (var i = 1; i <= divs; i++) {
   
     let divEl = document.createElement("div");
     let divElText = document.createTextNode(string);

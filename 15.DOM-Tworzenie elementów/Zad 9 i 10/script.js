@@ -15,40 +15,39 @@ class Person {
   }
 }
 
-document.getElementById("table").style.display == 'none';
-
 data = [];
 let count = 0;
 
-function onSubmit(event) {
+Update = () => {
   let form = document.forms["myForm"];
+  let info = new FormData(form);
 
   console.log(arguments);
-  let formData = new FormData(form);
-  document.myForm.reset();
 
   count++;
   let amount = count;
-  firstName = formData.get("firstName");
-  surname = formData.get("surname");
-  age = formData.get("age");
-  children = formData.get("children");
-
+  firstName = info.get("firstName");
+  surname = info.get("surname");
+  age = info.get("age");
+  children = info.get("children");
 
   upperFirstLetter(firstName, surname)
 
   const person = new Person(amount, firstNameUpper, surnameUpper, age, children);
   data.push(person);
 
-  createElement();
+  addTab();
 }
 
-function createElement() {
-  let createArea = document.querySelector("#addObjects");
-  for (i = 1; i <= amount; i++) {
-      const element = document.createElement(`div`);
-      element.innerHTML = `<td>${person.firstName}</td><td>${person.surname}</td><td>${person.age}</td><td>${person.children}</td>`;
-    createArea.appendChild(element);
+function addTab() {
+
+  let table = document.querySelector("#table").style.display = "table"
+
+  for(person of data){
+    let table = document.querySelector("#table");
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${person.firstName}</td><td>${person.lastName}</td><td>${person.age}</td><td>${person.children}</td>`;
+    table.appendChild(tr);
   }
 }
 

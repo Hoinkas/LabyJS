@@ -9,8 +9,10 @@
 
 <body>
 
+    <script src="./script.js" type="text/javascript"></script>
+
     <div id="wrapper">
-        <form class="myForm" id="myForm" onsubmit="onSubmit();return false">
+        <form class="myForm" id="myForm" update="Update();return false">
             <label for="name">Imie</label>
             <input type="text" name="name" id="name" required>
 
@@ -24,13 +26,15 @@
             <input type="amount" name="children" id="children" required>
 
             <button type="submit">Wyślij</button>
-            <button onclick="addInformation()"  onclick="toggle_visibility('table')">addInformation</button>
         </form>
 
-        <div id = addObjects>
+        <tr id = table>
+            <td id="nameTable" style="font-weight: bold;">Imię</td>
+            <td id="surnameTable" style="font-weight: bold;">Nazwisko</td>
+            <td id="ageTable" style="font-weight: bold;">Wiek</td>
+            <td id="childrenTable" style="font-weight: bold;">Dzieci</td>
+        </tr>
     </div>
-
-    <script src="./script.js" type="text/javascript"></script>
 </body>
 
 </html>
